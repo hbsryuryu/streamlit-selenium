@@ -8,11 +8,14 @@ from webdriver_manager.core.utils import ChromeType
 st.title('米国株価可視化アプリ')
 
 def aaaaaa():
+    url = "https://www.irisplaza.co.jp/index.php?KB=SHOSAI&SID=P537205"
     if (platform.system() == "Windows"):
         options = webdriver.ChromeOptions()
         chrome_service = fs.Service(executable_path=ChromeDriverManager().install())
     else:
         options = webdriver.ChromeOptions()
+        ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+        options.add_argument('--user-agent=' + ua)
         options.add_argument("--headless")
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
@@ -20,7 +23,6 @@ def aaaaaa():
         chrome_service = fs.Service(executable_path=ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
     browser = webdriver.Chrome(options=options,service=chrome_service)
-    browser.get('https://www.irisplaza.co.jp/index.php?KB=SHOSAI&SID=P537205')
     browser.close()
 
 
