@@ -27,6 +27,8 @@ if st.button('Say hello'):
         options = webdriver.ChromeOptions()
     else:
         options = webdriver.ChromeOptions()
+        # ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
+        # options.add_argument('--user-agent=' + ua)
         options.add_argument("--headless")
         options.add_argument('--disable-gpu')
         options.add_argument('--no-sandbox')
@@ -36,6 +38,8 @@ if st.button('Say hello'):
 
     
     browser = webdriver.Chrome(options=options,service=chrome_service)
+    browser.get('https://scraping-for-beginner.herokuapp.com/login_page')
+    print("test")
     browser.close()
     st.write('Done')
 else:
