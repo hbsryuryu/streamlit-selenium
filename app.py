@@ -20,7 +20,7 @@ def aaaaaa():
         chrome_service = fs.Service(executable_path=ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
     browser = webdriver.Chrome(options=options,service=chrome_service)
-    browser.get('https://scraping-for-beginner.herokuapp.com/login_page')
+    browser.get('https://www.irisplaza.co.jp/index.php?KB=SHOSAI&SID=P537205')
     browser.close()
 
 
